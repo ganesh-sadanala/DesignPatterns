@@ -9,6 +9,7 @@ import Structural.Adapter.RoundHole;
 import Structural.Adapter.RoundPeg;
 import Structural.Adapter.SquarePeg;
 import Structural.Adapter.SquarePegAdapter;
+import Structural.Facade.VideoConverter;
 
 public class Main {
 
@@ -16,6 +17,8 @@ public class Main {
     public static FurnitureFactory furnitureFactory;
 
     public static Database database;
+
+    public static VideoConverter videoConverter;
 
     public static void configure(String []args){
 
@@ -60,6 +63,7 @@ public class Main {
                 hole.fits(small_sqpeg_adapter); // true
                 hole.fits(large_sqpeg_adapter); // false
             }
+            case "Facade" -> videoConverter.convertVideo("abc", "def");
         }
     }
 
