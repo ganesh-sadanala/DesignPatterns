@@ -1,0 +1,11 @@
+- Allows objects with incompatible interfaces to collaborate.
+- Acts as an conversion/compatibility Adapter.
+- Follows Single Responsibility and Open/Closed Principles.
+- **Object Adapter Structure**
+- ![img.png](img.png)
+- **Class Adapter Structure**
+- ![img_1.png](img_1.png)
+- **Example**
+- ![img_2.png](img_2.png)
+- Use the Adapter class when you want to use some existing class, but its interface isn’t compatible with the rest of your code.
+- Use the pattern when you want to reuse several existing subclasses that lack some common functionality that can’t be added to the superclass.

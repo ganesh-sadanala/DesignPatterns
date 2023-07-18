@@ -5,6 +5,10 @@ import Creational.Factory.RoadLogistics;
 import Creational.Factory.SeaLogistics;
 import Creational.Factory.Transport;
 import Creational.Singleton.Database;
+import Structural.Adapter.RoundHole;
+import Structural.Adapter.RoundPeg;
+import Structural.Adapter.SquarePeg;
+import Structural.Adapter.SquarePegAdapter;
 
 public class Main {
 
@@ -42,6 +46,20 @@ public class Main {
                 Manual manual = carManualBuilder.getResult();
             }
             case "Singleton" -> database = Database.getDatabase();
+            case "Adapter" -> {
+                RoundHole hole = new RoundHole(5l);
+                RoundPeg rpeg = new RoundPeg(5l);
+                hole.fits(rpeg); // true
+
+                SquarePeg small_sqpeg = new SquarePeg(5l);
+                SquarePeg large_sqpeg = new SquarePeg(10l);
+//                hole.fits(small_sqpeg) // this won't compile (incompatible types)
+
+                SquarePegAdapter small_sqpeg_adapter = new SquarePegAdapter(small_sqpeg);
+                SquarePegAdapter large_sqpeg_adapter = new SquarePegAdapter(large_sqpeg);
+                hole.fits(small_sqpeg_adapter); // true
+                hole.fits(large_sqpeg_adapter); // false
+            }
         }
     }
 
