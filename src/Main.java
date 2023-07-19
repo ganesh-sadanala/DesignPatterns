@@ -9,6 +9,10 @@ import Structural.Adapter.RoundHole;
 import Structural.Adapter.RoundPeg;
 import Structural.Adapter.SquarePeg;
 import Structural.Adapter.SquarePegAdapter;
+import Structural.Decorator.FacebookDecorator;
+import Structural.Decorator.Notifier;
+import Structural.Decorator.SMSDecorator;
+import Structural.Decorator.SlackDecorator;
 import Structural.Facade.VideoConverter;
 
 public class Main {
@@ -20,6 +24,7 @@ public class Main {
 
     public static VideoConverter videoConverter;
 
+    public static Notifier stack;
     public static void configure(String []args){
 
         switch (args[0]) {
@@ -64,6 +69,14 @@ public class Main {
                 hole.fits(large_sqpeg_adapter); // false
             }
             case "Facade" -> videoConverter.convertVideo("abc", "def");
+            case "Decorator" ->{
+                stack = new Notifier();
+                if(args[1] != null) stack = new FacebookDecorator(stack);
+                if(args[2] != null) stack = new SlackDecorator(stack);
+                if(args[3] != null) stack = new SMSDecorator(stack);
+
+                stack.send("Hello!");
+            }
         }
     }
 
