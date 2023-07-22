@@ -1,3 +1,7 @@
+import Behavioral.Observer.Editor;
+import Behavioral.Observer.EmailAlertsListener;
+import Behavioral.Observer.EventListener;
+import Behavioral.Observer.LoggingListener;
 import Behavioral.Strategy.Navigator;
 import Behavioral.Strategy.PublicTransportStrategy;
 import Behavioral.Strategy.RoadStrategy;
@@ -33,6 +37,9 @@ public class Main {
     public static Notifier stack;
 
     public static Navigator navigator;
+
+    public static Editor editor;
+
     public static void configure(String []args){
 
         switch (args[0]) {
@@ -93,6 +100,11 @@ public class Main {
                     case "PT" -> navigator.setRouteStrategy(new PublicTransportStrategy());
                 }
                 navigator.buildRoute(new Point(2, 3), new Point(1, 2));
+            }
+            case "Observer" -> {
+                editor = new Editor();
+                editor.getEvents().subscribe("open", new LoggingListener());
+                editor.getEvents().subscribe("save", new EmailAlertsListener());
             }
         }
     }
