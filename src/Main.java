@@ -1,3 +1,7 @@
+import Behavioral.Strategy.Navigator;
+import Behavioral.Strategy.PublicTransportStrategy;
+import Behavioral.Strategy.RoadStrategy;
+import Behavioral.Strategy.WalkingStrategy;
 import Creational.AbstractFactory.*;
 import Creational.Builder.*;
 import Creational.Factory.Logistics;
@@ -15,6 +19,8 @@ import Structural.Decorator.SMSDecorator;
 import Structural.Decorator.SlackDecorator;
 import Structural.Facade.VideoConverter;
 
+import java.awt.*;
+
 public class Main {
 
     public static Logistics logistics;
@@ -25,6 +31,8 @@ public class Main {
     public static VideoConverter videoConverter;
 
     public static Notifier stack;
+
+    public static Navigator navigator;
     public static void configure(String []args){
 
         switch (args[0]) {
@@ -76,6 +84,15 @@ public class Main {
                 if(args[3] != null) stack = new SMSDecorator(stack);
 
                 stack.send("Hello!");
+            }
+            case "Strategy" -> {
+                navigator = new Navigator();
+                switch(args[1]){
+                    case "Road" -> navigator.setRouteStrategy(new RoadStrategy());
+                    case "Walk" -> navigator.setRouteStrategy(new WalkingStrategy());
+                    case "PT" -> navigator.setRouteStrategy(new PublicTransportStrategy());
+                }
+                navigator.buildRoute(new Point(2, 3), new Point(1, 2));
             }
         }
     }

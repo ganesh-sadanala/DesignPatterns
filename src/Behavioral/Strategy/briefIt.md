@@ -1,0 +1,6 @@
+- Lets you define a family of algorithms, put each of them into a separate class, and make their objects interchangeable.
+- Follows Single Responsibility, Open/Closed and Interface Segregation Principles.
+- **Structure**
+- ![img.png](img.png)
+- **Example**
+- ![img_1.png](img_1.png)
