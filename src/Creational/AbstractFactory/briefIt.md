@@ -6,7 +6,7 @@
  - Structure
  - ![img.png](img.png)
  - Example
-![img_2.png](img_2.png)
+ - ![img_3.png](img_3.png)
 
  - Use the Abstract Creational.Factory when your code needs to work with various families of related products, but you don’t want it to depend on the concrete classes of those products—they might be unknown beforehand or you simply want to allow for future extensibility.
  - Consider implementing the Abstract Creational.Factory when you have a class with a set of Creational.Factory Methods that blur its primary responsibility.

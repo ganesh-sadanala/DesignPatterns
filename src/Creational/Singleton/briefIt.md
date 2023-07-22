@@ -5,4 +5,4 @@
 - structure (Private constructor and instance return method)
 - ![img.png](img.png)
 - Example
-- ![img_1.png](img_1.png)
+- ![img_3.png](img_3.png)

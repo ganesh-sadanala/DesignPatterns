@@ -10,7 +10,7 @@
 - Structure
 ![img_1.png](img_1.png)
 - Example
-![img_2.png](img_2.png)
+![img_3.png](img_3.png)
 
 - Use the Creational.Factory Method when you don’t know beforehand the exact types and dependencies of the objects your code should work with.
 - Use the Creational.Factory Method when you want to provide users of your library or framework with a way to extend its internal components.

@@ -5,8 +5,7 @@
 - Structure
 - ![img.png](img.png)
 - Example
-- ![img_1.png](img_1.png)
-
+- ![img_2.png](img_2.png)
 - Use the Creational.Builder pattern to get rid of a “telescoping constructor”.
 - Use the Creational.Builder to construct Composite trees or other complex objects.
 - Use the Creational.Builder pattern when you want your code to be able to create different representations of some product (for example, stone and wooden houses).
