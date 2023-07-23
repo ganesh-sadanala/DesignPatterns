@@ -7,6 +7,9 @@ import Behavioral.Strategy.Navigator;
 import Behavioral.Strategy.PublicTransportStrategy;
 import Behavioral.Strategy.RoadStrategy;
 import Behavioral.Strategy.WalkingStrategy;
+import Behavioral.Visitor.JSONExportVisitor;
+import Behavioral.Visitor.Visitor;
+import Behavioral.Visitor.XMLExportVisitor;
 import Creational.AbstractFactory.*;
 import Creational.Builder.*;
 import Creational.Factory.Logistics;
@@ -43,6 +46,8 @@ public class Main {
 
     public static SocialNetwork network;
     public static SocialSpammer spammer;
+
+    public static Visitor visitor;
 
     public static void configure(String []args){
 
@@ -120,6 +125,12 @@ public class Main {
 
                 iterator = network.createCoworkersIterator(profile.getId());
                 spammer.send(iterator, "Very important message");
+            }
+            case "Visitor" -> {
+                if(args[1].equals("JSON")) visitor = new JSONExportVisitor();
+                else visitor = new XMLExportVisitor();
+//                foreach (shape in allShapes) do
+//                    shape.accept(exportVisitor)
             }
         }
     }
