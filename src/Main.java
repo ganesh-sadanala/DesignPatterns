@@ -1,3 +1,4 @@
+import Behavioral.Iterator.*;
 import Behavioral.Observer.Editor;
 import Behavioral.Observer.EmailAlertsListener;
 import Behavioral.Observer.EventListener;
@@ -39,6 +40,9 @@ public class Main {
     public static Navigator navigator;
 
     public static Editor editor;
+
+    public static SocialNetwork network;
+    public static SocialSpammer spammer;
 
     public static void configure(String []args){
 
@@ -105,6 +109,17 @@ public class Main {
                 editor = new Editor();
                 editor.getEvents().subscribe("open", new LoggingListener());
                 editor.getEvents().subscribe("save", new EmailAlertsListener());
+            }
+            case "Iterator" -> {
+                if(args[1].equals("Facebook")) network=new Facebook();
+                else network = new LinkedIn();
+                spammer = new SocialSpammer();
+                Profile profile = new Profile();
+                ProfileIterator iterator = network.createFriendsIterator(profile.getId());
+                spammer.send(iterator, "Very important message");
+
+                iterator = network.createCoworkersIterator(profile.getId());
+                spammer.send(iterator, "Very important message");
             }
         }
     }
