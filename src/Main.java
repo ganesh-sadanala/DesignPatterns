@@ -3,6 +3,9 @@ import Behavioral.Observer.Editor;
 import Behavioral.Observer.EmailAlertsListener;
 import Behavioral.Observer.EventListener;
 import Behavioral.Observer.LoggingListener;
+import Behavioral.StateDelegation.Document;
+import Behavioral.StateDelegation.Moderation;
+import Behavioral.StateDelegation.Published;
 import Behavioral.Strategy.Navigator;
 import Behavioral.Strategy.PublicTransportStrategy;
 import Behavioral.Strategy.RoadStrategy;
@@ -48,6 +51,8 @@ public class Main {
     public static SocialSpammer spammer;
 
     public static Visitor visitor;
+
+    public static Document document;
 
     public static void configure(String []args){
 
@@ -131,6 +136,11 @@ public class Main {
                 else visitor = new XMLExportVisitor();
 //                foreach (shape in allShapes) do
 //                    shape.accept(exportVisitor)
+            }
+            case "State" -> {
+                document=new Document();
+                if(args[1].equals("Admin")) document.changeState(new Published(document);
+                else document.changeState(new Moderation(document));
             }
         }
     }
