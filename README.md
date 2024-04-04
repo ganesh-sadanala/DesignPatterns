@@ -1,5 +1,5 @@
 # DesignPatterns
-Top 12 Design Patterns (LLD and HLD)
+Design Patterns (LLD and HLD)
 
 # References
 - https://refactoring.guru/
