@@ -1,3 +1,4 @@
+- Note: Inheritance is not a good solution if you want to change the behaviour of subclass or extend the behaviour of subclass dynamically. Composition/Aggregation which are inherent part of Decoration pattern are the best solutions in that usecase.
 - Attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
 - Creating all possible variations of classes by extending multiple of them causes bloating client code and increase complexity.
 - Follows Single Responsibility Principle.
