@@ -1,3 +1,4 @@
+import Behavioral.Command.*;
 import Behavioral.Iterator.*;
 import Behavioral.Observer.Editor;
 import Behavioral.Observer.EmailAlertsListener;
@@ -141,6 +142,30 @@ public class Main {
                 document=new Document();
                 if(args[1].equals("Admin")) document.changeState(new Published(document);
                 else document.changeState(new Moderation(document));
+            }
+            case "Command" -> {
+                Behavioral.Command.Editor editor=new Behavioral.Command.Editor();
+                Application app=new Application();
+
+                // Create commands
+                Command copyCommand=new CopyCommand(editor);
+                Command cutCommand = new CutCommand(editor);
+                Command pasteCommand = new PasteCommand(editor);
+
+
+                // Perform operations
+                app.setCommand(copyCommand);
+                app.executeCommand();
+
+                app.setCommand(cutCommand);
+                app.executeCommand();
+
+                app.setCommand(pasteCommand);
+                app.executeCommand();
+
+                // Undo the last command
+                app.undoCommand();
+
             }
         }
     }
