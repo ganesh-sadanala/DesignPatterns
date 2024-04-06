@@ -25,13 +25,14 @@ import Structural.Adapter.RoundHole;
 import Structural.Adapter.RoundPeg;
 import Structural.Adapter.SquarePeg;
 import Structural.Adapter.SquarePegAdapter;
+import Structural.Composite.Product;
 import Structural.Decorator.FacebookDecorator;
 import Structural.Decorator.Notifier;
 import Structural.Decorator.SMSDecorator;
 import Structural.Decorator.SlackDecorator;
 import Structural.Facade.VideoConverter;
-
-import java.awt.*;
+import Structural.Composite.Component;
+import Structural.Composite.Box;
 
 public class Main {
 
@@ -165,7 +166,29 @@ public class Main {
 
                 // Undo the last command
                 app.undoCommand();
+            }
+            case "Composite" -> {
+                Component product1 = new Product("Product 1", 10.0);
+                Component product2 = new Product("Product 2", 20.0);
+                Component product3 = new Product("Product 3", 30.0);
 
+                // Create boxes and add products
+                Box box1 = new Box(5.0);
+                box1.addComponent(product1);
+                box1.addComponent(product2);
+
+                Box box2 = new Box(10.0);
+                box2.addComponent(product3);
+                box2.addComponent(box1);
+
+                // Create an order and add products and boxes
+                Box order = new Box(0.0);
+                order.addComponent(product1);
+                order.addComponent(box2);
+
+                // Calculate the total price of the order
+                double totalPrice = order.calculatePrice();
+                System.out.println("Total Price: $" + totalPrice);
             }
         }
     }
