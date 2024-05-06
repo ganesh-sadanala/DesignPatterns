@@ -104,12 +104,3 @@ If deploying this service, the following considerations should be taken into acc
 
 ## Architectural/Workflow Diagram
 ![diagram.png](src%2Fmain%2Fresources%2Fdiagram.png)
-## License
-
-At CodeScreen, we strongly value the integrity and privacy of our assessments. As a result, this repository is under exclusive copyright, which means you **do not** have permission to share your solution to this test publicly (i.e., inside a public GitHub/GitLab repo, on Reddit, etc.). <br>
-
-## Submitting your solution
-
-Please push your changes to the `main branch` of this repository. You can push one or more commits. <br>
-
-Once you are finished with the task, please click the `Submit Solution` link on <a href="https://app.codescreen.com/candidate/e3d971ae-7789-4a6d-9d0e-93565d4963ca" target="_blank">this screen</a>.
