@@ -1,6 +1,6 @@
 package Structural.Decorator;
 
-public class BaseDecorator extends Notifier{
+public abstract class BaseDecorator extends Notifier{
     Notifier notifier;
     BaseDecorator(Notifier notifier){
         this.notifier=notifier;
