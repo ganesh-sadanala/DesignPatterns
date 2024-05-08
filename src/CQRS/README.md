@@ -15,4 +15,9 @@
     - **Projection/Projector:** Projection means representing domain objects in different shapes and structures.
     These projections of original data are read-only and highly optimized to provide an enhanced read experience.
     We can cache projections for better performance.
-    - 
+  - Implementing Write
+    - Define Commands. **Command** is an intent to mutate the state of the domain model. These hold the data that we intent to mutate.
+    - Define Aggregates. Responsible for taking commands and handling them. Aggregates may accept or reject a command.
+  - Implementing Read
+    - Define Queries. Simple Java classes holding the data to define a query.
+    - Define projections. Responsible for taking queries and handling them. 
