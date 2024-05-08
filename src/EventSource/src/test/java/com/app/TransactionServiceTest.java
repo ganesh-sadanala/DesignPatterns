@@ -7,8 +7,6 @@ import static org.mockito.Mockito.*;
 import java.math.BigDecimal;
 
 import dev.codescreen.model.*;
-import EventSource.src.main.java.com.app.repository.UserRepository;
-import EventSource.src.main.java.com.app.service.TransactionService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -16,7 +14,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import EventSource.src.main.java.com.app.event.LoadEvent;
-import EventSource.src.main.java.com.app.repository.EventRepository;
 
 public class TransactionServiceTest {
 

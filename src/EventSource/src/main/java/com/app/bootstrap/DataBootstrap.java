@@ -1,7 +1,5 @@
 package EventSource.src.main.java.com.app.bootstrap;
 
-import EventSource.src.main.java.com.app.repository.EventRepository;
-import EventSource.src.main.java.com.app.repository.UserRepository;
 import EventSource.src.main.java.com.app.event.AuthorizationEvent;
 import EventSource.src.main.java.com.app.event.Event;
 import EventSource.src.main.java.com.app.event.LoadEvent;

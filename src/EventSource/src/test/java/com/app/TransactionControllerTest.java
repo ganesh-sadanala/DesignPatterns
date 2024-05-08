@@ -14,9 +14,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import EventSource.src.main.java.com.app.controller.TransactionController;
-import EventSource.src.main.java.com.app.service.TransactionService;
-
 @ExtendWith(MockitoExtension.class)
 public class TransactionControllerTest {
 

@@ -1,10 +1,9 @@
 Real-time Transaction Challenge
 ===============================
 
-You are tasked with building a simple bank ledger system that utilizes the [event sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) pattern to maintain a transaction history. The system should allow users to perform basic banking operations such as depositing funds, withdrawing funds, and checking balances. The ledger should maintain a complete and immutable record of all transactions, enabling auditability and reconstruction of account balances at any point in time.
+UseCase: Building a simple bank ledger system that utilizes the [event sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) pattern to maintain a transaction history. The system should allow users to perform basic banking operations such as depositing funds, withdrawing funds, and checking balances. The ledger should maintain a complete and immutable record of all transactions, enabling auditability and reconstruction of account balances at any point in time.
 
 ## Details
-The [included service.yml](service.yml) is the OpenAPI 3.0 schema to a service we would like you to create and host.
 
 The service accepts two types of transactions:
 1) Loads: Add money to a user (credit)
@@ -27,7 +26,6 @@ Define the structure of events and ensure they can be easily serialized and pers
 
 **Documentation and Clarity:** We’ll assess the clarity of your documentation, including comments within the code, README files, architectural diagrams, and explanations of design decisions. Your documentation should provide sufficient context for reviewers to understand the problem, solution, and implementation details.
 
-# Candidate README
 ## Bootstrap instructions
 To run this server locally, follow these steps:
 
@@ -78,7 +76,7 @@ These design patterns and principles contribute to the overall clarity, maintain
    - The service assumes that transactional integrity is maintained by the underlying database system, ensuring that operations such as user balance updates and event persistence are atomic and consistent. It does not implement custom transaction management logic within the application layer.
 
 
-## Bonus: Deployment considerations
+## Deployment considerations
 If deploying this service, the following considerations should be taken into account:
 
 1. **Containerization:**

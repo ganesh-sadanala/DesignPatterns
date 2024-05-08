@@ -1,7 +1,5 @@
 package EventSource.src.main.java.com.app.service;
 
-import EventSource.src.main.java.com.app.repository.EventRepository;
-import EventSource.src.main.java.com.app.repository.UserRepository;
 import EventSource.src.main.java.com.app.event.AuthorizationEvent;
 import EventSource.src.main.java.com.app.event.LoadEvent;
 import dev.codescreen.model.*;

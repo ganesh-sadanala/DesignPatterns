@@ -1,8 +1,6 @@
 package EventSource.src.main.java.com.app.controller;
 
 import dev.codescreen.model.*;
-import EventSource.src.main.java.com.app.model.Error;
-import EventSource.src.main.java.com.app.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
