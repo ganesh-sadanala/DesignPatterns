@@ -1,11 +1,12 @@
-- Lets you separate algorithms from the objects on which they operate.
-- The Visitor pattern suggests that you place the new behavior into a separate class called visitor, instead of trying to integrate it into existing classes. The original object that had to perform the behavior is now passed to one of the visitor’s methods as an argument, providing the method access to all necessary data contained within the object.
-
-- The Visitor pattern addresses this problem. It uses a technique called Double Dispatch, which helps to execute the proper method on an object without cumbersome conditionals. Instead of letting the client select a proper version of the method to call, how about we delegate this choice to objects we’re passing to the visitor as an argument? Since the objects know their own classes, they’ll be able to pick a proper method on the visitor less awkwardly. They “accept” a visitor and tell it what visiting method should be executed.
+The Visitor design pattern is a way to separate algorithms from the objects they operate on. It allows you to add new operations to existing object structures without modifying those objects. Here's a simplified explanation:\
+**How the Visitor Pattern Works**
+- You have a hierarchy of objects (e.g., different shapes like Circle, Square, Triangle) that need to support various operations (e.g., calculating area, drawing, etc.).
+- Instead of putting the operation logic inside each shape class, you create a separate Visitor interface with a visit method for each shape type.
+- Each shape class implements an accept method that takes a Visitor object as an argument. When called, this method delegates the operation to the corresponding visit method on the Visitor object, passing itself as an argument.
+- To perform an operation, you create a concrete Visitor class that implements the Visitor interface and defines the operation logic in the respective visit methods.
+- You then create a Visitor object and pass it to the accept method of each shape object you want to operate on.
 - **Structure**
 - ![img.png](img.png)
-- **Example**
-- ![img_1.png](img_1.png)
 - Use the Visitor when you need to perform an operation on all elements of a complex object structure (for example, an object tree).
 - Use the Visitor to clean up the business logic of auxiliary behaviors.
 - Use the pattern when a behavior makes sense only in some classes of a class hierarchy, but not in others.

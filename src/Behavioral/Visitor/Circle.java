@@ -1,18 +1,18 @@
 package Behavioral.Visitor;
 
 public class Circle implements Shape{
-    @Override
-    public void move(int x, int y) {
 
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
     }
 
-    @Override
-    public void draw() {
-
+    public double getRadius() {
+        return radius;
     }
 
-    @Override
-    public void accept(Visitor v) {
-        v.visitCircle(this);
+    public void setRadius(double radius) {
+        this.radius = radius;
     }
 }

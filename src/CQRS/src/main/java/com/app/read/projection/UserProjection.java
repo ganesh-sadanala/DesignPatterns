@@ -2,6 +2,8 @@ package CQRS.src.main.java.com.app.read.projection;
 
 import CQRS.src.main.java.com.app.model.Address;
 import CQRS.src.main.java.com.app.model.Contact;
+import CQRS.src.main.java.com.app.read.UserAddress;
+import CQRS.src.main.java.com.app.read.UserContact;
 import CQRS.src.main.java.com.app.read.query.AddressByRegionQuery;
 import CQRS.src.main.java.com.app.read.query.ContactByTypeQuery;
 import CQRS.src.main.java.com.app.repository.UserReadRepository;
