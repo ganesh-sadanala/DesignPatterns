@@ -11,9 +11,6 @@ import Behavioral.Strategy.Navigator;
 import Behavioral.Strategy.PublicTransportStrategy;
 import Behavioral.Strategy.RoadStrategy;
 import Behavioral.Strategy.WalkingStrategy;
-import Behavioral.Visitor.JSONExportVisitor;
-import Behavioral.Visitor.Visitor;
-import Behavioral.Visitor.XMLExportVisitor;
 import Creational.AbstractFactory.*;
 import Creational.Builder.*;
 import Creational.Factory.Logistics;
@@ -72,17 +69,12 @@ public class Main {
                 } else furnitureFactory = new VictorianFurnitureFactory();
             }
             case "Builder" -> {
-                Director director = new Director();
-                CarBuilder carBuilder = new CarBuilder();
-                director.makeSportsCar(carBuilder);
-                Car car = carBuilder.getResult();
-                CarManualBuilder carManualBuilder = new CarManualBuilder();
-                director.makeSportsCar(carManualBuilder);
-
-                // The final product is often retrieved from a builder
-                // object since the director isn't aware of and not
-                // dependent on concrete builders and products.
-                Manual manual = carManualBuilder.getResult();
+                Car car = Car.builder()
+                        .setGPS()
+                        .setEngine("avav")
+                        .setSeats(12l)
+                        .setTripComputer()
+                        .build();
             }
             case "Singleton" -> database = Database.getDatabase();
             case "Adapter" -> {
