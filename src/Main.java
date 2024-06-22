@@ -2,7 +2,6 @@ import Behavioral.Command.*;
 import Behavioral.Iterator.*;
 import Behavioral.Observer.Editor;
 import Behavioral.Observer.EmailAlertsListener;
-import Behavioral.Observer.EventListener;
 import Behavioral.Observer.LoggingListener;
 import Behavioral.StateDelegation.Document;
 import Behavioral.StateDelegation.Moderation;

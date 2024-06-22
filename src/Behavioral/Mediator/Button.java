@@ -10,6 +10,7 @@ public class Button extends UIControl{
     public void click(){
         mediator.notify(this, "ButtonClicked");
     }
+
     @Override
     void handleEvent(String event) {
 
