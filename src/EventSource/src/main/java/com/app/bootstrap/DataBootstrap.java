@@ -3,10 +3,8 @@ package EventSource.src.main.java.com.app.bootstrap;
 import EventSource.src.main.java.com.app.event.AuthorizationEvent;
 import EventSource.src.main.java.com.app.event.Event;
 import EventSource.src.main.java.com.app.event.LoadEvent;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
-import org.springframework.stereotype.Component;
+import EventSource.src.main.java.com.app.repository.EventRepository;
+import EventSource.src.main.java.com.app.repository.UserRepository;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

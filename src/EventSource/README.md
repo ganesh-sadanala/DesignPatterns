@@ -11,7 +11,6 @@ Every load or authorization PUT should return the updated balance following the 
 
 
 Implement the event sourcing pattern to record all banking transactions as immutable events. Each event should capture relevant information such as transaction type, amount, timestamp, and account identifier.
-Define the structure of events and ensure they can be easily serialized and persisted to a data store of your choice. We do not expect you to use a persistent store (you can you in-memory object), but you can if you want. We should be able to bootstrap your project locally to test.
 
 ## Bootstrap instructions
 To run this server locally, follow these steps:
